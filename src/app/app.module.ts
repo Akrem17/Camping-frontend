@@ -9,12 +9,16 @@ import { ToursOverViewComponent } from './tours-over-view/tours-over-view.compon
 import { TourCardComponent } from './tours-over-view/tour-card/tour-card.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { LoginComponent } from './login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ToursOverViewComponent,
     TourCardComponent,
     NavBarComponent,
+    LoginComponent,
     FooterComponent,
   ],
   imports: [
