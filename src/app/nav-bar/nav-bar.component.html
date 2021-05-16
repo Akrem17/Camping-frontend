@@ -3,9 +3,22 @@
         <a class="nav__el" routerLink="/">All tours</a>
     </nav>
     <div class="header__logo">
-        <img src="../../assets/img/logo-green-round.png" alt="Tours logo" />
+       
+        <div *ngIf="user;else other_content2" class="form__group">
+            <input class="form__input" 
+            id="search" type="text" 
+            placeholder="search by location" 
+            required="required"
+            formControlName="search"
+            />
+          </div>
+          <ng-template #other_content2>
+            <img src="../../assets/img/logo-green-round.png" alt="Tours logo" />
+        </ng-template>
+          
     </div>
     <nav class="nav nav--user">
+       
         <span *ngIf="user;else other_content">
             <a class="nav__el nav__el--logout" (click)="onLogout()">
                 Log out
