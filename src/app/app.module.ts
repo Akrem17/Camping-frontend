@@ -13,7 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+
 import { AuthInterceptor } from 'src/shared/services/auth-interceptors';
+
 
 @NgModule({
   declarations: [

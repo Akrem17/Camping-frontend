@@ -1,6 +1,7 @@
 <main class="main">
     <div class="login-form">
       <h2 class="heading-secondary ma-bt-lg">Create your account</h2>
+
       <form class="form" id="form-signup" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form__group">
           <label class="form__label" for="name">Name</label>
@@ -26,7 +27,6 @@
           placeholder="••••••••" required="required" minlength="8"
           formControlName="password"/>
         </div>
-        
         <div class="form__group">
           <button class="btn btn--green" id="btn-sign" type="submit">sign up</button>
         </div>
