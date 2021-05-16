@@ -6,6 +6,21 @@
         <img src="../../assets/img/logo-green-round.png" alt="Tours logo" />
     </div>
     <nav class="nav nav--user">
-        <a class="nav__el" routerLink="/login">Log in</a>
-        <a class="nav__el nav__el--cta" routerLink="/signup">Sign up</a></nav>
+        <span *ngIf="user;else other_content">
+            <a class="nav__el nav__el--logout" (click)="onLogout()">
+                Log out
+            </a>
+            <a class="nav__el" href="/me">
+                <img class="nav__user-img" src="../../assets/img/users/{{ user.picture}}"/>
+                    <span>{{ user.name }}</span>
+                    
+                </a>
+               
+            </span>
+            <ng-template #other_content>
+                <a class="nav__el" routerLink="/login" >Log in</a>
+                <a class="nav__el nav__el--cta" routerLink="/signup" >Sign up</a>
+            </ng-template>
+        </nav>
+        
 </header>
