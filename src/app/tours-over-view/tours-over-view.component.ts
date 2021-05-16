@@ -19,7 +19,7 @@ export class ToursOverViewComponent implements OnInit {
       "startDates": [
         "2021-06-19T09:00:00.000Z",
       ],
-      "_id": "",
+      "_id": "60a12c4e49f28730547b87ab",
       "name": "The Sea Explorer",
       "duration": 7,
       "maxGroupSize": 15,
@@ -43,7 +43,7 @@ export class ToursOverViewComponent implements OnInit {
       "startDates": [
         "2021-06-19T09:00:00.000Z",
       ],
-      "_id": "",
+      "_id": "60a12c4e49f28730547b87ab",
       "name": "The Sea Explorer",
       "duration": 7,
       "maxGroupSize": 15,
@@ -67,7 +67,7 @@ export class ToursOverViewComponent implements OnInit {
       "startDates": [
         "2021-06-19T09:00:00.000Z",
       ],
-      "_id": "",
+      "_id": "60a12c4e49f28730547b87ab",
       "name": "The Sea Explorer",
       "duration": 7,
       "maxGroupSize": 15,
@@ -91,7 +91,7 @@ export class ToursOverViewComponent implements OnInit {
       "startDates": [
         "2021-06-19T09:00:00.000Z",
       ],
-      "_id": "",
+      "_id": "60a12c4e49f28730547b87ab",
       "name": "The Sea Explorer",
       "duration": 7,
       "maxGroupSize": 15,
