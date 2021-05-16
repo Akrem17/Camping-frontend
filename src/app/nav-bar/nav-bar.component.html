@@ -4,14 +4,20 @@
     </nav>
     <div class="header__logo">
        
-        <div *ngIf="user;else other_content2" class="form__group">
-            <input class="form__input" 
+        <div *ngIf="user;else other_content2" style="text-align: center;">
+            <form class="form" id="form-signup" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+            <input class="form__input2" 
             id="search" type="text" 
             placeholder="search by location" 
             required="required"
             formControlName="search"
-            />
+            />      
+            <button class="nav__el" type="submit">search</button>    
+        </form>
           </div>
+          
+            
+          
           <ng-template #other_content2>
             <img src="../../assets/img/logo-green-round.png" alt="Tours logo" />
         </ng-template>
