@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { AuthInterceptor } from 'src/shared/services/auth-interceptors';
+import { TourDetailsComponent } from './tours-over-view/tour-details/tour-details.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AuthInterceptor } from 'src/shared/services/auth-interceptors';
     LoginComponent,
     FooterComponent,
     SignUpComponent,
+    TourDetailsComponent,
   ],
   imports: [
     BrowserModule,
