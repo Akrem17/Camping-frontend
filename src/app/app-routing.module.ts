@@ -7,6 +7,8 @@ import { ToursOverViewComponent } from './tours-over-view/tours-over-view.compon
 
 const routes: Routes = [
   {path: 'tours', component: ToursOverViewComponent, },
+  {path: 'login', component: LoginComponent, },
+  {path: 'signup', component: SignUpComponent, },
   {path: '', redirectTo:'tours', pathMatch: 'full'},
   {path: 'login',component:LoginComponent},
   {path: 'signup',component:SignUpComponent},
