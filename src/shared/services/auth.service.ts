@@ -53,6 +53,8 @@ userLogin(): Observable<any> {
       
       this.token = res.token;
       this.user = res.user
+      console.log(res)
+      localStorage.setItem('user',JSON.stringify(this.user));
       this.sendMessage(this.user)
       this.route.navigate(['tours'])
     })

@@ -1231,14 +1231,14 @@
     border-radius: 5px;
   }
   
-  .form__input {
-    display: block;
+  .form__input2 {
+    
     font-family: inherit;
     font-size: 1.5rem;
     color: inherit;
-    padding: 1.25rem 1.75rem;
+    padding: 0.2rem 0.2rem;
     border: none;
-    width: 100%;
+    text-align: center;
     background-color: #fff;
     background-color: #f2f2f2;
     border-top: 3px solid transparent;
