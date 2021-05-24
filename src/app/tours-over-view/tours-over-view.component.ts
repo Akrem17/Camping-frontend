@@ -24,12 +24,6 @@ export class ToursOverViewComponent implements OnInit {
       this.tours = data
     })
 
-  ngOnInit() {
-    console.log( this.tourService.getTours().subscribe(res=>{
-
-      //@ts-ignore
-      this.tours=res
-    }))
-  }
+  
  
-}
+}}
