@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/models/user.modal';
 import { AuthService } from 'src/shared/services/auth.service';
 import { FormGroup, FormControl} from '@angular/forms'
+import { TourService } from 'src/shared/services/tour.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -16,7 +18,7 @@ export class NavBarComponent implements OnInit {
     
   });
 
-  constructor(private authService:AuthService ) {
+  constructor(private authService:AuthService,private route:Router ) {
      
    }
 
@@ -43,6 +45,8 @@ export class NavBarComponent implements OnInit {
   }
 
   onSearch(){
-    alert('wiiou')
+   
+    this.route.navigate(['/tours'],
+     { queryParams: { startLocation: this.searchForm.value.search}})
   }
 }
