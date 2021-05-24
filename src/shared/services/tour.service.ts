@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { environment} from '../../environments/environment'
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,10 +11,6 @@ export class TourService {
 
  
   constructor(private http:HttpClient) { }
-
-
-  
-
 
 
   getTours(search?){
@@ -29,4 +26,5 @@ export class TourService {
   getTour(id:string){
     return this.http.get(`${environment.url}/randonnee/get_randonnee/${id}`)
   }
+
 }
