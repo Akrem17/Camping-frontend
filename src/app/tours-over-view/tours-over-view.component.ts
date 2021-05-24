@@ -8,17 +8,21 @@ import { TourService } from 'src/shared/services/tour.service';
   styleUrls: ['./tours-over-view.component.css']
 })
 export class ToursOverViewComponent implements OnInit {
-  tours:any[]= [
-   
-  ]
-  
-  
-    
-  
-  constructor( private tourService:TourService) { 
-    
+  tours:Tour[]= []
 
-  }
+  
+  
+    
+  
+
+  
+  constructor(private tourService:TourService) { }
+
+  ngOnInit() {
+    this.tourService.getTours().subscribe(data=>{
+      //@ts-ignore
+      this.tours = data
+    })
 
   ngOnInit() {
     console.log( this.tourService.getTours().subscribe(res=>{
