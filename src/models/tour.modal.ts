@@ -19,4 +19,5 @@ export class Tour {
     startLocation: {};
     locations: [];
     guides: [];
+    comments:[]
 }

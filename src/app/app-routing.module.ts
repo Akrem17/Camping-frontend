@@ -8,6 +8,8 @@ import { ToursOverViewComponent } from './tours-over-view/tours-over-view.compon
 
 const routes: Routes = [
   {path: 'tours', component: ToursOverViewComponent, },
+  
+
   {path: 'tours/:id', component: TourDetailsComponent, },
   {path: 'login', component: LoginComponent, },
   {path: 'signup', component: SignUpComponent, },

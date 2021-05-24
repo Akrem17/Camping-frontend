@@ -107,22 +107,36 @@
   <section class="section-reviews">
     <div class="reviews">
         <!--review card -->
-        
-<div class="reviews__card" >
+      
+<div class="reviews__card"  *ngFor="let comment of tour.comments">
     <div class="reviews__avatar">
-        <img class="reviews__avatar-img"/>
-      <h6 class="reviews__user"></h6>
+        <img class="reviews__avatar-img" src="../../../assets/img/users/{{comment.user.picture}}" />
+      <h6 class="reviews__user">
+       {{comment.user.name}}
+      </h6>
     </div>
-    <p class="reviews__text"></p>
+    <p class="reviews__text">
+      {{comment.text}}
+    </p>
     <div class="reviews__rating">
       <svg class="reviews__star">
         <use xlink:href="/img/icons.svg#icon-star"></use>
       </svg>
     </div>
   </div>
+  </div>
+
+
+  <div class="row">
+    <div class="reviews__card" >
+      <form class="form" id="form-comment" [formGroup]="commentForm" (ngSubmit)="onComment()">
+      <textarea class="form__input" formControlName="comment" placeholder="WRITE A COMMENT"></textarea>
+      <button class="btn btn--green span-all-rows comment" type="submit">comment</button>
+      </form>
+    </div>
     </div>
   </section>
-
+  
   <section class="section-cta">
     <div class="cta">
       <div class="cta__img cta__img--logo">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Tour } from 'src/models/tour.modal';
 import { TourService } from 'src/shared/services/tour.service';
 
@@ -9,21 +10,32 @@ import { TourService } from 'src/shared/services/tour.service';
 })
 export class ToursOverViewComponent implements OnInit {
   tours:Tour[]= []
-
-  
-  
-    
-  
-
-  
-  constructor(private tourService:TourService) { }
+  constructor(private tourService:TourService,private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.tourService.getTours().subscribe(data=>{
+   
+    this.route.queryParamMap.subscribe(params=>{
       //@ts-ignore
-      this.tours = data
+      if(params.params.startLocation){
+         //@ts-ignore
+        this.tourService.getTours(params.params.startLocation).subscribe(data=>{
+     
+          //@ts-ignore
+          this.tours = data
+          
+        })
+      }else{
+        this.tourService.getTours().subscribe(data=>{
+     
+          //@ts-ignore
+          this.tours = data
+          
+        })
+      }
+      
     })
-
   
- 
-}}
+  }
+
+
+}
