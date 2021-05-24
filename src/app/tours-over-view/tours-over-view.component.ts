@@ -10,8 +10,6 @@ import { TourService } from 'src/shared/services/tour.service';
 })
 export class ToursOverViewComponent implements OnInit {
   tours:Tour[]= []
-
-  
   constructor(private tourService:TourService,private route:ActivatedRoute) { }
 
   ngOnInit() {

@@ -35,10 +35,10 @@ userLogin(): Observable<any> {
     const authData = {email:email,password:password};
     this.http.post<{user:User,token:string}>(`${environment.url}/user/login`,authData).subscribe(res =>{
       this.token = res.token;
-      
       this.user = res.user
-      this.sendMessage(this.user)
       localStorage.setItem('user',JSON.stringify(this.user));
+      localStorage.setItem('token',res.token)
+      this.sendMessage(this.user)
       this.route.navigate(['tours'])
     })
   }
@@ -53,8 +53,9 @@ userLogin(): Observable<any> {
       
       this.token = res.token;
       this.user = res.user
-      console.log(res)
+     
       localStorage.setItem('user',JSON.stringify(this.user));
+      localStorage.setItem('token',res.token)
       this.sendMessage(this.user)
       this.route.navigate(['tours'])
     })
@@ -69,7 +70,10 @@ userLogin(): Observable<any> {
     
   }
   getToken(){
-    return this.token;
+    
+      return localStorage.getItem('token')
+    
+    
   }
   
 }
