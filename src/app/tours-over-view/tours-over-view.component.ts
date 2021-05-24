@@ -9,9 +9,12 @@ import { TourService } from 'src/shared/services/tour.service';
 })
 export class ToursOverViewComponent implements OnInit {
   tours:Tour[]= []
+
   
   
     
+  
+
   
   constructor(private tourService:TourService) { }
 
@@ -20,6 +23,13 @@ export class ToursOverViewComponent implements OnInit {
       //@ts-ignore
       this.tours = data
     })
-  }
 
+  ngOnInit() {
+    console.log( this.tourService.getTours().subscribe(res=>{
+
+      //@ts-ignore
+      this.tours=res
+    }))
+  }
+ 
 }
