@@ -77,6 +77,15 @@
             formControlName="startDates"
             />
           </div>
+          <div class="form__group">
+            <label class="form__label" >Price</label>
+            <input class="form__input" 
+            type="number" 
+            placeholder="type Price" 
+            required="required"
+            formControlName="price"
+            />
+          </div>
          
         
         <div class="form__group">
@@ -85,3 +94,11 @@
       </form>
     </div>
   </main>
+
+
+
+  <div class="alert" style="display: none;" #alert>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Success!</strong> Tour created <br>
+    please wait you are being redirected...
+  </div>

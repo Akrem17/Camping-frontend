@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { TourService } from 'src/shared/services/tour.service';
 
 @Component({
   selector: 'app-add-tour',
@@ -7,6 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./add-tour.component.css']
 })
 export class AddTourComponent implements OnInit {
+  @ViewChild('alert',{static:true}) alert
   createTourForm=new FormGroup({
     name:new FormControl(''),
     description:new FormControl(''),
@@ -19,8 +22,9 @@ export class AddTourComponent implements OnInit {
     startDates:new FormControl(''),
     imageCover:new FormControl(''),
     images:new FormControl(['']),
+    price:new FormControl('')
   })
-  constructor() { }
+  constructor(private tourService:TourService,private route:Router) { }
 
   ngOnInit() {
   }
@@ -30,6 +34,19 @@ export class AddTourComponent implements OnInit {
     
     this.createTourForm.value.imageCover = "tour-5-cover.jpg"
     this.createTourForm.value.images = ["tour-5-1.jpg","tour-5-2.jpg","tour-5-3.jpg"]
-    console.log(this.createTourForm.value)
+    const tour = {...this.createTourForm.value}
+    tour.startLocation = {
+      description:this.createTourForm.value.locationDescription,
+      address:this.createTourForm.value.locationAddress
+    }
+    
+    this.tourService.createTour(tour).subscribe(res=>{
+      this.alert.nativeElement.style = 'display:block'
+      setTimeout(()=>{                           //<<<---using ()=> syntax
+        this.route.navigate(['/tours'])
+   }, 3000);
+    })
   }
 }
+
+
