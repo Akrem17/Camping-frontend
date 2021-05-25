@@ -34,6 +34,7 @@ userLogin(): Observable<any> {
   loginUser(email:string,password:string){
     const authData = {email:email,password:password};
     this.http.post<{user:User,token:string}>(`${environment.url}/user/login`,authData).subscribe(res =>{
+      console.log(res)
       this.token = res.token;
       this.user = res.user
       localStorage.setItem('user',JSON.stringify(this.user));
