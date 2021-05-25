@@ -16,6 +16,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { AuthInterceptor } from 'src/shared/services/auth-interceptors';
 import { TourDetailsComponent } from './tours-over-view/tour-details/tour-details.component';
+import { AddTourComponent } from './add-tour/add-tour.component';
+
 
 
 @NgModule({
@@ -28,13 +30,15 @@ import { TourDetailsComponent } from './tours-over-view/tour-details/tour-detail
     FooterComponent,
     SignUpComponent,
     TourDetailsComponent,
+    AddTourComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
   bootstrap: [AppComponent]
