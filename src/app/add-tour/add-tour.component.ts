@@ -18,7 +18,7 @@ export class AddTourComponent implements OnInit {
     locationAddress:new FormControl(''),
     startDates:new FormControl(''),
     imageCover:new FormControl(''),
-    Images:new FormControl(['']),
+    images:new FormControl(['']),
   })
   constructor() { }
 
@@ -28,6 +28,8 @@ export class AddTourComponent implements OnInit {
   
   onSubmit(){
     
+    this.createTourForm.value.imageCover = "tour-5-cover.jpg"
+    this.createTourForm.value.images = ["tour-5-1.jpg","tour-5-2.jpg","tour-5-3.jpg"]
     console.log(this.createTourForm.value)
   }
 }
