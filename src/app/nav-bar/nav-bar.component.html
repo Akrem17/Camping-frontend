@@ -24,18 +24,21 @@
           
     </div>
     <nav class="nav nav--user">
-       
+        <a *ngIf="user.role==='organisateur';" class="nav__el " routerLink="tours/add">
+            <p>ADD TOUR</p>
+        </a>
+        <a *ngIf="user;" class="nav__el nav__el--logout" (click)="onLogout()">
+            <p>Log out</p>
+        </a>
         <span *ngIf="user;else other_content">
-            <a class="nav__el nav__el--logout" (click)="onLogout()">
-                Log out
-            </a>
+           
             <a class="nav__el" href="/me">
                 <img class="nav__user-img" src="../../assets/img/users/{{ user.picture}}"/>
                     <span>{{ user.name }}</span>
                     
-                </a>
-               
-            </span>
+            </a>
+           
+         </span>
             <ng-template #other_content>
                 <a class="nav__el" routerLink="/login" >Log in</a>
                 <a class="nav__el nav__el--cta" routerLink="/signup" >Sign up</a>

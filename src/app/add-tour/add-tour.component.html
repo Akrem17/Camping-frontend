@@ -1,0 +1,106 @@
+<main class="main">
+    <div class="login-form">
+      <h2 class="heading-secondary ma-bt-lg">Create your tour</h2>
+
+      <form class="form" id="form-signup" [formGroup]="createTourForm" (ngSubmit)="onSubmit()">
+        <div class="form__group">
+          <label class="form__label" for="name">Name</label>
+          <input class="form__input" id="name" 
+          type="text" 
+          placeholder="type tour name" 
+          required="required"
+          formControlName="name"
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">Summary</label>
+          <textarea  class="form__input"
+          placeholder="Summary" 
+          required="required"
+          formControlName="summary" ></textarea>
+        </div>
+        <div class="form__group">
+          <label class="form__label" >Description</label>
+          <textarea  class="form__input"
+          placeholder="Description" 
+          required="required"
+          formControlName="description" ></textarea>
+        </div>
+        <div class="form__group">
+            <label class="form__label" >Duration</label>
+            <input class="form__input" 
+            type="number" 
+            placeholder="type duration" 
+            required="required"
+            formControlName="duration"
+            />
+          </div>
+        <div class="form__group">
+            <label class="form__label" >Difficulty</label>
+            <input class="form__input" 
+            type="text" 
+            placeholder="type difficulty" 
+            required="required"
+            formControlName="difficulty"
+            />
+          </div>
+        <div class="form__group">
+            <label class="form__label" >MaxGroupSize</label>
+            <input class="form__input" 
+            type="number" 
+            placeholder="type MaxGroupSize" 
+            required="required"
+            formControlName="maxGroupSize"
+            />
+          </div>
+        <div class="form__group">
+            <label class="form__label" >StartLocation</label>
+            <input class="form__input" style="margin-bottom: 2px;"
+            type="text" 
+            placeholder="type description" 
+            required="required"
+            formControlName="locationDescription"
+            />
+            <input class="form__input" 
+            type="text" 
+            placeholder="type adresse" 
+            required="required"
+            formControlName="locationAddress"
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" >StartDate</label>
+            <input class="form__input" 
+            type="datetime-local" 
+            placeholder="type StartDates" 
+            required="required"
+            formControlName="startDates"
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" >ImageCover</label>
+            <input class="form__input" 
+            type="file" 
+            placeholder="upload imageCover" 
+            required="required"
+            formControlName="imageCover"
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" >Images</label>
+            <input class="form__input" 
+            multiple
+            type="file" 
+            placeholder="upload Images" 
+            required="required"
+            formControlName="Images"
+            
+            />
+          </div>
+        
+        <div class="form__group">
+          <button class="btn btn--green" id="btn-sign" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </main>
