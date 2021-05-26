@@ -18,7 +18,7 @@ export class NavBarComponent implements OnInit {
     
   });
 
-  constructor(private authService:AuthService,private route:Router ) {
+  constructor(private authService:AuthService,private route:Router,private tourservice:TourService ) {
      
    }
 
@@ -45,8 +45,14 @@ export class NavBarComponent implements OnInit {
   }
 
   onSearch(){
-   
-    this.route.navigate(['/tours'],
-     { queryParams: { startLocation: this.searchForm.value.search}})
+    var place={place:this.searchForm.value.search};
+    this.tourservice.savePlace(place).subscribe(res=>{
+      this.route.navigate(['/tours'],
+      { queryParams: { startLocation: this.searchForm.value.search}})
+    },(err)=>{
+      console.log(err)
+    })
+ 
+
   }
 }

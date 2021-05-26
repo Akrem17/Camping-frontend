@@ -31,5 +31,18 @@ export class TourService {
   createTour(tour:Tour){
     return this.http.post(`${environment.url}/randonnee/add_randonnee`,tour)
   }
+  getTourByName(name:string){
+    var obj={place:name}
+    return this.http.post(`${environment.url}/randonnee/getbyname`,obj)
+  }
+  savePlace(place:any){
+    const user= JSON.parse(localStorage.getItem('user'))
+    console.log(typeof( user))
+    //@ts-ignore
+      console.log(place)
+          //@ts-ignore
+
+    return this.http.put(`${environment.url}/user/place/${user._id}`,place)
+  }
 
 }

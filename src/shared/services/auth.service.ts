@@ -77,4 +77,8 @@ userLogin(): Observable<any> {
     
   }
   
+  getUserById(id:string){
+    return this.http.get(`${environment.url}/user/`+id)
+  }
 }
+
