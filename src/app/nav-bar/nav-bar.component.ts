@@ -55,4 +55,8 @@ export class NavBarComponent implements OnInit {
  
 
   }
+  reset(){
+    this.route.navigate(['/tours'])
+
+  }
 }
