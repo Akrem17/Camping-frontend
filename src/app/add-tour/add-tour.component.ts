@@ -35,6 +35,7 @@ export class AddTourComponent implements OnInit {
     this.createTourForm.value.imageCover = "tour-5-cover.jpg"
     this.createTourForm.value.images = ["tour-5-1.jpg","tour-5-2.jpg","tour-5-3.jpg"]
     const tour = {...this.createTourForm.value}
+    this.createTourForm.value.locationDescription=this.createTourForm.value.locationDescription.toLowerCase();
     tour.startLocation = {
       description:this.createTourForm.value.locationDescription,
       address:this.createTourForm.value.locationAddress
