@@ -14,7 +14,7 @@ export class ToursOverViewComponent implements OnInit {
   constructor(private tourService:TourService,private route:ActivatedRoute,private userservice:AuthService) { }
 
   ngOnInit() {
-    var id= JSON.parse(localStorage.getItem('user'))
+   /*  var id= JSON.parse(localStorage.getItem('user'))
     
     id=id._id
     var rando=[] 
@@ -43,7 +43,7 @@ export class ToursOverViewComponent implements OnInit {
     })
    
 
-
+ */
   
     this.route.queryParamMap.subscribe(params=>{
       //@ts-ignore
@@ -61,6 +61,7 @@ export class ToursOverViewComponent implements OnInit {
           //@ts-ignore
           this.tours = data
           
+          console.log(this.tours)
         })
       }
       

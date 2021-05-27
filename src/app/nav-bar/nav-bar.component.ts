@@ -41,6 +41,7 @@ export class NavBarComponent implements OnInit {
   onLogout(){
     
     this.authService.logoutUser()
+    localStorage.clear()
     location.reload()
   }
 
