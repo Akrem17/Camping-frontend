@@ -37,6 +37,12 @@ export class TourDetailsComponent implements OnInit {
       this.toursService.getTour(this.tour.id).subscribe(data=>{
         this.tour = data
         console.log(data)
+        this.commentForm.reset()
+        const id = this.activatedRoute.snapshot.paramMap.get('id')
+        this.toursService.getTour(id).subscribe(data=>{
+          this.tour = data
+          console.log(data)
+        })
       })
       
     },err=>{
